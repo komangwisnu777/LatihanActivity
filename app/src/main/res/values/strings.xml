@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">PindahActiity1</string>
+    <string name="app_name">PindahActivity1</string>
+    <string name="reset_view_inflater">Awalnya kosong ....\n\n\ncoba klik tombol dibawah untuk isi view ....</string>
 </resources>

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnHalLogin, btnHalAlert;
+    private Button btnHalLogin, btnHalAlert, btnHalInflater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Main3Activity.class));
+            }
+        });
+
+        btnHalInflater = findViewById(R.id.btn_hal_inflater);
+        btnHalInflater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Main4Activity.class));
             }
         });
 

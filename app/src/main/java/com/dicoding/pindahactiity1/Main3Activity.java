@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Main3Activity extends AppCompatActivity {
 
-    private Button btnAlertDialog, btnToast, btnSnackbar;
+    private Button btnAlertDialog, btnToast, btnSnackbar, btnListDialog;
     private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,33 @@ public class Main3Activity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+            }
+        });
+
+        btnListDialog = findViewById(R.id.btn_list_dialog);
+        btnListDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                final String[] pilihan = {"makanan", "uang", "mainan", "baju", "buku", "semuanya aja"};
+
+                AlertDialog.Builder buider = new AlertDialog.Builder(Main3Activity.this)
+                    .setTitle("Pilih aja mau yang mana")
+                    .setItems(pilihan, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+//                        switch (which) {
+//                            case 0 : Snackbar.make(v,"saya pilih makanan", Snackbar.LENGTH_LONG).show();
+//                                        break;
+//
+//                            case 1 : Snackbar.make(v, "saya pilih uang", Snackbar.LENGTH_LONG).show();
+//                                        break;
+//                        }
+                        Snackbar.make(v,"saya pilih "+pilihan[which],Snackbar.LENGTH_LONG).show();
+                    }
+                });
+                AlertDialog dialog = buider.create();
+                dialog.show();
+
             }
         });
 
